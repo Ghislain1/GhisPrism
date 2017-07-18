@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Drawing;
+
 namespace GhisPrism.Windows.Views
 {
   /// <summary>
@@ -23,6 +25,20 @@ namespace GhisPrism.Windows.Views
     public NotificationIcon()
     {
       InitializeComponent();
+    }
+
+    private void Click(object sender, RoutedEventArgs e)
+    {
+      var con = new Icon("NotifyIcon.ico");
+      // Configure and show a notification icon in the system tray
+      var notifyIcon = new System.Windows.Forms.NotifyIcon
+      {
+        BalloonTipText = @"Hello, NotifyIcon!",
+        Text = @"Hello, NotifyIcon!",
+        Icon = new Icon("NotifyIcon.ico"),
+        Visible = true
+      };
+      notifyIcon.ShowBalloonTip(1000);
     }
   }
 }

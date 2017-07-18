@@ -8,6 +8,9 @@ namespace GhisPrism.Core.Commons
 {
   public class RegionNames
   {
-    public static string ContentRegion = "ContentRegion";
+    public static string FileItemContentsViewRegion = "FileItemContentsViewRegion";
+    public static string FileItemListViewRegion = "FileItemListViewRegion";
+    public static string RibbonRegion = "RibbonRegion";
+    public static string StatusBarRegion = "StatusBarRegion";
   }
 }

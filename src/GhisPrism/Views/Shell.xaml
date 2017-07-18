@@ -8,8 +8,71 @@
         xmlns:ghis="http://Ghisprism/sample/wpf/2017/core"
         mc:Ignorable="d"
         Title="Shell" Height="700" Width="1300">
-  <Grid>
+  <Grid x:Name="MainGrid">
+    <Grid.RowDefinitions>
 
-    <ContentControl prism:RegionManager.RegionName="{x:Static ghis:RegionNames.ContentRegion}" />
+      <!--Ribbon placement-->
+      <RowDefinition Height="Auto" />
+
+      <!-- GridSplitter -->
+      <RowDefinition Height="Auto" />
+
+      <RowDefinition />
+      <!--Status bar -->
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+
+      <ColumnDefinition Width="auto"  MinWidth="100" />
+
+      <!-- GridSplitter -->
+      <ColumnDefinition Width="Auto" />
+
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+
+    <!--placeholder for ribbon -->
+    <ContentControl Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.RibbonRegion}" />
+
+    <!--horizontal GridSplitter -->
+    <GridSplitter Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch"
+              Background="Black"
+              ShowsPreview="True"
+              Height="5" />
+
+    <!--placeholder for treeview -->
+    <ContentControl Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemListViewRegion}" />
+
+    <!--vertical  GridSplitter -->
+    <GridSplitter Grid.Column="1"
+
+                  Grid.Row="2"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Stretch"
+              Background="Black"
+              ShowsPreview="True"
+              Width="5" />
+
+    <!--placeholder for content view -->
+    <ContentControl Grid.Row="2"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemContentsViewRegion}" />
+
+    <!--placeholder for status bar view -->
+    <ContentControl Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
   </Grid>
 </Window>
