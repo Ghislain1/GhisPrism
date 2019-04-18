@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism.Core", "GhisPrism.Core\GhisPrism.Core.csproj", "{1B81FBE6-3BC0-463E-8172-E06E498FF02B}"
 EndProject
@@ -49,5 +49,8 @@ Global
 		{6252D28F-D32F-42BD-9A2E-AF80523576AA} = {D1AEA498-ED50-4843-A92E-54EE1C0CFA02}
 		{0675BDD7-8195-47B3-AA6D-433F20CD7890} = {D1AEA498-ED50-4843-A92E-54EE1C0CFA02}
 		{AE0CF905-09A9-4B09-9E93-F9A7B6514714} = {D1AEA498-ED50-4843-A92E-54EE1C0CFA02}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D32DF6A3-D1B5-4DCF-8BED-A11BB8A4FBE6}
 	EndGlobalSection
 EndGlobal

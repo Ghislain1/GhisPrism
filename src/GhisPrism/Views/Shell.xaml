@@ -1,78 +1,86 @@
-﻿<Window x:Class="GhisPrism.Views.Shell"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GhisPrism.Views"
-        xmlns:prism="http://prismlibrary.com/"
-        xmlns:ghis="http://Ghisprism/sample/wpf/2017/core"
-        mc:Ignorable="d"
-        Title="Shell" Height="700" Width="1300">
-  <Grid x:Name="MainGrid">
-    <Grid.RowDefinitions>
+﻿<Window
+    x:Class="GhisPrism.Views.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ghis="http://Ghisprism/sample/wpf/2017/core"
+    xmlns:local="clr-namespace:GhisPrism.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    Title="Shell"
+    Width="1300"
+    Height="700"
+    mc:Ignorable="d">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
 
-      <!--Ribbon placement-->
-      <RowDefinition Height="Auto" />
+            <!--  Ribbon placement  -->
+            <RowDefinition Height="Auto" />
 
-      <!-- GridSplitter -->
-      <RowDefinition Height="Auto" />
+            <!--  GridSplitter  -->
+            <RowDefinition Height="Auto" />
 
-      <RowDefinition />
-      <!--Status bar -->
-      <RowDefinition Height="Auto" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
+            <RowDefinition />
+            <!--  Status bar  -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
 
-      <ColumnDefinition Width="auto"  MinWidth="100" />
+            <ColumnDefinition Width="auto" MinWidth="100" />
 
-      <!-- GridSplitter -->
-      <ColumnDefinition Width="Auto" />
+            <!--  GridSplitter  -->
+            <ColumnDefinition Width="Auto" />
 
-      <ColumnDefinition />
-    </Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
-    <!--placeholder for ribbon -->
-    <ContentControl Grid.Row="0"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="3"
-                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.RibbonRegion}" />
+        <!--  placeholder for ribbon  -->
+        <ContentControl
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.RibbonRegion}" />
 
-    <!--horizontal GridSplitter -->
-    <GridSplitter Grid.Row="1"
-                  Grid.Column="0"
-                  Grid.ColumnSpan="3"
-              HorizontalAlignment="Stretch"
-              VerticalAlignment="Stretch"
-              Background="Black"
-              ShowsPreview="True"
-              Height="5" />
+        <!--  horizontal GridSplitter  -->
+        <GridSplitter
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Height="5"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Background="Black"
+            ShowsPreview="True" />
 
-    <!--placeholder for treeview -->
-    <ContentControl Grid.Row="2"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemListViewRegion}" />
+        <!--  placeholder for treeview  -->
+        <ContentControl
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemListViewRegion}" />
 
-    <!--vertical  GridSplitter -->
-    <GridSplitter Grid.Column="1"
+        <!--  vertical  GridSplitter  -->
+        <GridSplitter
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="5"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Stretch"
+            Background="Black"
+            ShowsPreview="True" />
 
-                  Grid.Row="2"
-              HorizontalAlignment="Center"
-              VerticalAlignment="Stretch"
-              Background="Black"
-              ShowsPreview="True"
-              Width="5" />
+        <!--  placeholder for content view  -->
+        <ContentControl
+            Grid.Row="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemContentsViewRegion}" />
 
-    <!--placeholder for content view -->
-    <ContentControl Grid.Row="2"
-                    Grid.Column="2"
-                    Grid.ColumnSpan="2"
-                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemContentsViewRegion}" />
-
-    <!--placeholder for status bar view -->
-    <ContentControl Grid.Row="3"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
-  </Grid>
+        <!--  placeholder for status bar view  -->
+        <ContentControl
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
+    </Grid>
 </Window>

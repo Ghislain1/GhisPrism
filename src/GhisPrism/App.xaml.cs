@@ -1,24 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace GhisPrism
+﻿namespace GhisPrism
 {
-  /// <summary>
-  /// Interaction logic for App.xaml
-  /// </summary>
-  public partial class App : Application
-  {
-    protected override void OnStartup(StartupEventArgs e)
-    {
-      base.OnStartup(e);
+    using GhisPrism.Views;
+    using Prism.Ioc;
+    using Prism.Modularity;
+    using Prism.Unity;
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Data;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Windows;
 
-      var bootstrapper = new Bootstrapper();
-      bootstrapper.Run();
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : PrismApplication
+    {
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new ConfigurationModuleCatalog();
+        }
+
+        protected override Window CreateShell()
+        {
+            return Container.Resolve<Shell>();
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+        }
     }
-  }
 }
