@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{D1AE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism", "GhisPrism\GhisPrism.csproj", "{7F3DB52F-5D61-4947-9630-EF53427CB598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism.FileExplorerTreeView", "Modules\GhisPrism.FileExplorerTreeView\GhisPrism.FileExplorerTreeView.csproj", "{6252D28F-D32F-42BD-9A2E-AF80523576AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism.Package", "Modules\GhisPrism.Package\GhisPrism.Package.csproj", "{6252D28F-D32F-42BD-9A2E-AF80523576AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism.FileExplorerRibbon", "Modules\GhisPrism.FileExplorerRibbon\GhisPrism.FileExplorerRibbon.csproj", "{0675BDD7-8195-47B3-AA6D-433F20CD7890}"
 EndProject

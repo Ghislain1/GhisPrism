@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GhisPrism.FileExplorerTreeView
+namespace GhisPrism.Package.ViewModels
 {
-  public interface IFileItemListViewModel
-  {
-  }
+    public class PackageListViewModel
+    {
+    }
 }

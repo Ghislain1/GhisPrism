@@ -57,7 +57,7 @@
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemListViewRegion}" />
+            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.PackageListViewRegion}" />
 
         <!--  vertical  GridSplitter  -->
         <GridSplitter

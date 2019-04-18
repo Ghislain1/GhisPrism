@@ -91,7 +91,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -109,6 +111,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes">
+      <Version>2.5.1</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Unity">
       <Version>7.1.0.431</Version>
     </PackageReference>

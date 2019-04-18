@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GhisPrism.FileExplorerTreeView.Views
+namespace GhisPrism.Package.Views
 {
   /// <summary>
   /// Interaction logic for FileItemListView.xaml

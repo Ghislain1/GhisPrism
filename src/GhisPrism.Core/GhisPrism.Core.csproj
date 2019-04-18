@@ -41,11 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IChocolateyService.cs" />
     <Compile Include="IFileItemService.cs" />
     <Compile Include="Commons\RegionNames.cs" />
     <Compile Include="IFileItemViewModel.cs" />
+    <Compile Include="Models\ChocolateyFeature.cs" />
+    <Compile Include="Models\ChocolateySetting.cs" />
+    <Compile Include="Models\ChocolateySource.cs" />
     <Compile Include="Models\FileItem.cs" />
     <Compile Include="Models\FileItemType.cs" />
+    <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\PackageOperationResult.cs" />
+    <Compile Include="Models\PackageResults.cs" />
+    <Compile Include="Models\PackageSearchOptions.cs" />
+    <Compile Include="Models\SemanticVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FileItemService.cs" />
   </ItemGroup>
