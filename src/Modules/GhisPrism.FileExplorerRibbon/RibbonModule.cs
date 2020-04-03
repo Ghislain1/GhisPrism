@@ -1,27 +1,19 @@
 ﻿namespace GhisPrism.FileExplorerRibbon
 {
-  using Core.Commons;
-  using Prism.Modularity;
-  using Prism.Regions;
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
-  using Views;
+    using Core.Commons;
+    using Prism.Ioc;
+    using Prism.Modularity;
+    using Views;
 
-  public class RibbonModule : IModule
-  {
-    private IRegionManager regionManager;
-
-    public RibbonModule(IRegionManager regionManager)
+    public class RibbonModule : IModule
     {
-      this.regionManager = regionManager;
-    }
+        public void OnInitialized(IContainerProvider containerProvider)
+        {
+        }
 
-    public void Initialize()
-    {
-      regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(RibbonView));
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation(typeof(RibbonView), RegionNames.RibbonRegion);
+        }
     }
-  }
 }

@@ -79,13 +79,13 @@
   <ItemGroup />
   <ItemGroup>
     <PackageReference Include="Prism.Core">
-      <Version>7.1.0.431</Version>
+      <Version>7.2.0.1422</Version>
     </PackageReference>
     <PackageReference Include="Prism.Unity">
-      <Version>7.1.0.431</Version>
+      <Version>7.2.0.1422</Version>
     </PackageReference>
     <PackageReference Include="Prism.Wpf">
-      <Version>7.1.0.431</Version>
+      <Version>7.2.0.1422</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
