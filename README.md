@@ -1,5 +1,5 @@
 # GhisPrism
-
+Rewriting [ChocolateyGUI](https://github.com/chocolatey/ChocolateyGUI/blob/develop/Source/ChocolateyGui) app by using [PRISM](https://prismlibrary.com/docs/getting-started/Download-and-Setup-Prism.html)  and [Material -Design In XAML](http://materialdesigninxaml.net/home)
 # Intro
 This is collection of WPF Samples using Prism.
 
