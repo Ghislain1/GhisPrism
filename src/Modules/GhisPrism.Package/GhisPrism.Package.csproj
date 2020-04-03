@@ -50,9 +50,12 @@
     <Compile Include="IFileItemListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ChocolateyService.cs" />
+    <Compile Include="Services\GhisSpecialFolderService.cs" />
     <Compile Include="ViewModels\FileItemListViewModel.cs" />
     <Compile Include="ViewModels\FileItemViewModel.cs" />
+    <Compile Include="ViewModels\ISourcesViewModel.cs" />
     <Compile Include="ViewModels\PackageListViewModel.cs" />
+    <Compile Include="ViewModels\SourcesViewModel.cs" />
     <Compile Include="Views\FileItemListView.xaml.cs">
       <DependentUpon>FileItemListView.xaml</DependentUpon>
     </Compile>

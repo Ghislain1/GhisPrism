@@ -10,7 +10,31 @@
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <Grid>
-        <TextBlock Text="GHislain" FontSize="56" />
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <!--  Status bar  -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="100" />
+            <!--  GridSplitter  -->
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <ListView MinWidth="300" Grid.Column="0" ItemsSource="{Binding SourceCollection}"  DataContext="{Binding SourcesViewModel}">
+        </ListView>
+
+        <ListView MinWidth="300" Grid.Column="1" ItemsSource="{Binding PackageCollection}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Id}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

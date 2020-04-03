@@ -3,6 +3,7 @@
     using Core;
     using Core.Commons;
     using GhisPrism.Package.Services;
+    using GhisPrism.Package.ViewModels;
     using Prism.Ioc;
     using Prism.Modularity;
     using Prism.Regions;
@@ -19,7 +20,8 @@
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<IChocolateyService, ChocolateyService>();
+            containerRegistry.RegisterSingleton<ISourcesViewModel, SourcesViewModel>();
+            containerRegistry.RegisterSingleton<IGhisSpecialFolderService, GhisSpecialFolderService>();
         }
     }
 }

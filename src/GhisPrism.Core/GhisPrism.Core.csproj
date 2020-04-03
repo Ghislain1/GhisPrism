@@ -45,6 +45,7 @@
     <Compile Include="IFileItemService.cs" />
     <Compile Include="Commons\RegionNames.cs" />
     <Compile Include="IFileItemViewModel.cs" />
+    <Compile Include="IGhisSpecialFolderService.cs" />
     <Compile Include="Models\ChocolateyFeature.cs" />
     <Compile Include="Models\ChocolateySetting.cs" />
     <Compile Include="Models\ChocolateySource.cs" />

@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism.Core", "GhisPrism.Core\GhisPrism.Core.csproj", "{1B81FBE6-3BC0-463E-8172-E06E498FF02B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{D1AEA498-ED50-4843-A92E-54EE1C0CFA02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism", "GhisPrism\GhisPrism.csproj", "{7F3DB52F-5D61-4947-9630-EF53427CB598}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6252D28F-D32F-42BD-9A2E-AF80523576AA} = {6252D28F-D32F-42BD-9A2E-AF80523576AA}
+		{0675BDD7-8195-47B3-AA6D-433F20CD7890} = {0675BDD7-8195-47B3-AA6D-433F20CD7890}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhisPrism.Package", "Modules\GhisPrism.Package\GhisPrism.Package.csproj", "{6252D28F-D32F-42BD-9A2E-AF80523576AA}"
 EndProject

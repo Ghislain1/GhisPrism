@@ -63,7 +63,7 @@
         <GridSplitter
             Grid.Row="2"
             Grid.Column="1"
-            Width="5"
+            Width="0"
             HorizontalAlignment="Center"
             VerticalAlignment="Stretch"
             Background="Black"
