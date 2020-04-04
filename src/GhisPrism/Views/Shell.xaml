@@ -4,45 +4,92 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ghis="http://Ghisprism/sample/wpf/2017/core"
-    xmlns:local="clr-namespace:GhisPrism.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     Title="Shell"
     Width="1300"
     Height="700"
     mc:Ignorable="d">
-    <Grid x:Name="MainGrid">
-        <Grid.RowDefinitions>
+    <materialDesign:DialogHost  Identifier="Root" IsOpen="False">
+        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+            <!--Left content-->
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <DockPanel MinWidth="220">
+                    <TextBox
+                        x:Name="DemoItemsSearchBox"
+                        Text="Comming Soon!!!"
+                        DockPanel.Dock="Top"
+                        Margin="16, 4"
+                        Width="200"
+                        BorderThickness="0"
+                        materialDesign:HintAssist.Hint="Search"
+                        materialDesign:HintAssist.IsFloating="True"
+                        materialDesign:TextFieldAssist.HasClearButton="True"
+                        materialDesign:TextFieldAssist.HasOutlinedTextField="True"
+                        materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
+                        materialDesign:TextFieldAssist.TextFieldCornerRadius="4" />
+                    <Rectangle  Fill="Yellow" />
+                </DockPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
 
-            <!--  Ribbon placement  -->
-            <RowDefinition Height="Auto" />
+            <!--Main content-->
+            <DockPanel>
+                <materialDesign:ColorZone Padding="16"
+                                          Background="Green"
+                                          materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                           Mode="PrimaryDark" DockPanel.Dock="Top">
+                    <DockPanel>
+                        <ToggleButton
+                            x:Name="MenuToggleButton"
+                            Style="{StaticResource MaterialDesignHamburgerToggleButton}"
+                            IsChecked="False"
+                            Click="MenuToggleButton_OnClick" />
+                        <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                            <StackPanel>
+                                <Button Content="Commin soon!... " IsEnabled="False" />
+                                <Separator />
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                        <TextBlock HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Text="GhisOne-WpfApp"
+                                   FontSize="22" />
+                    </DockPanel>
+                </materialDesign:ColorZone>
 
-            <!--  GridSplitter  -->
-            <RowDefinition Height="Auto" />
+                <Grid x:Name="MainGrid">
+                    <Grid.RowDefinitions>
 
-            <RowDefinition />
-            <!--  Status bar  -->
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
+                        <!--  Ribbon placement  -->
+                        <RowDefinition Height="Auto" />
 
-            <ColumnDefinition Width="auto" MinWidth="100" />
+                        <!--  GridSplitter  -->
+                        <RowDefinition Height="Auto" />
 
-            <!--  GridSplitter  -->
-            <ColumnDefinition Width="Auto" />
+                        <RowDefinition />
+                        <!--  Status bar  -->
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
 
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" MinWidth="100" />
 
-        <!--  placeholder for ribbon  -->
-        <ContentControl
+                        <!--  GridSplitter  -->
+                        <ColumnDefinition Width="Auto" />
+
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <!--  placeholder for ribbon  -->
+                    <ContentControl
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             prism:RegionManager.RegionName="{x:Static ghis:RegionNames.RibbonRegion}" />
 
-        <!--  horizontal GridSplitter  -->
-        <GridSplitter
+                    <!--  horizontal GridSplitter  -->
+                    <GridSplitter
             Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="3"
@@ -52,15 +99,15 @@
             Background="Black"
             ShowsPreview="True" />
 
-        <!--  placeholder for treeview  -->
-        <ContentControl
+                    <!--  placeholder for treeview  -->
+                    <ContentControl
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             prism:RegionManager.RegionName="{x:Static ghis:RegionNames.PackageListViewRegion}" />
 
-        <!--  vertical  GridSplitter  -->
-        <GridSplitter
+                    <!--  vertical  GridSplitter  -->
+                    <GridSplitter
             Grid.Row="2"
             Grid.Column="1"
             Width="0"
@@ -69,18 +116,21 @@
             Background="Black"
             ShowsPreview="True" />
 
-        <!--  placeholder for content view  -->
-        <ContentControl
+                    <!--  placeholder for content view  -->
+                    <ContentControl
             Grid.Row="2"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemContentsViewRegion}" />
 
-        <!--  placeholder for status bar view  -->
-        <ContentControl
+                    <!--  placeholder for status bar view  -->
+                    <ContentControl
             Grid.Row="3"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
-    </Grid>
+                </Grid>
+            </DockPanel>
+        </materialDesign:DrawerHost>
+    </materialDesign:DialogHost>
 </Window>
