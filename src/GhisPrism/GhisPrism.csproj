@@ -64,6 +64,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\ProgressService.cs" />
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
@@ -126,9 +127,6 @@
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
       <Version>4.7.1</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ZoeApp.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="AppZoe.ico" />

@@ -1,15 +1,13 @@
 ﻿namespace GhisPrism.Core
 {
-    using GhisPrism.Core.Models;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+    using GhisPrism.Core.Models;
 
     /// <summary>
-    /// Interface that defines operation for getting package information data and store the source of
-    /// each package.
+    /// Interface that defines operation for getting package information data and store the source
+    /// of each package.
     /// </summary>
     public interface IChocolateyService
     {
@@ -20,7 +18,8 @@
         Task<ChocolateyFeature[]> GetFeatures();
 
         /// <summary>
-        /// Provide all installed package in your PC.
+        /// Provide all installed package from the existing source e.g. nuget.org(INugetService),
+        /// chocolatey.org(GetChocolatey):only from your PC.
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<Package>> GetInstalledPackages();
