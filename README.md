@@ -23,6 +23,6 @@ This is collection of WPF Samples using Prism.
 * [Material -Design In XAML](http://materialdesigninxaml.net/home)
    * [Material in Action](https://github.com/ButchersBoy/doobry)
    
-# Inspiraton 
-* from [ChocolateyGUI](https://github.com/chocolatey/ChocolateyGUI/blob/develop/Source/ChocolateyGui), but with Prism and MaterialXAML
+# Talks
+* [ChoclateyService]() - Methods - General
 
