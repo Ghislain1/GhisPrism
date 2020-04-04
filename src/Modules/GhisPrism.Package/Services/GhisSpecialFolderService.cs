@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using GhisPrism.Core;
@@ -53,7 +54,7 @@ namespace GhisPrism.Package.Services
                 }
             });
 
-            collection.ForEach(item => result.Add(new Core.Models.Package() { Description = item.FullPath, Id = Guid.NewGuid().ToString() }));
+            collection.ForEach(item => result.Add(this.CreatePackage(item)));
 
             return result;
         }
@@ -101,6 +102,15 @@ namespace GhisPrism.Package.Services
         public Task UpdateSource(string id, Environment.SpecialFolder source)
         {
             throw new NotImplementedException();
+        }
+
+        private Core.Models.Package CreatePackage(FileItem item)
+        {
+            var result = new Core.Models.Package();
+            result.Id = item.FullPath;
+            var fileInfo = new FileInfo(item.FullPath);
+            result.IsLatestVersion = fileInfo.IsReadOnly;
+            return result;
         }
     }
 }
