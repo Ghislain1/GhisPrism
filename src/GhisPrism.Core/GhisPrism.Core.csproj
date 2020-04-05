@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="xxx\**" />
+    <EmbeddedResource Remove="xxx\**" />
+    <None Remove="xxx\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
 </Project>

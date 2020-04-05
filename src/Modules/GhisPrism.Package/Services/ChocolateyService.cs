@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using GhisPrism.Core;
+    using GhisPrism.Core.Models;
 
     public class ChocolateyService : IChocolateyService
     {

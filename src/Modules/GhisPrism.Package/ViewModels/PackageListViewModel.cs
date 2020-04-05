@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using GhisPrism.Core;
+using Prism.Mvvm;
 
 namespace GhisPrism.Package.ViewModels
 {

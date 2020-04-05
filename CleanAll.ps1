@@ -5,13 +5,22 @@ $count = 0
 $binAndObjFolder | ForEach-Object ($_) { 
     $count++;
     Start-Sleep -Second 3
-    Write-Output " " $count
-    Write-Output " Folder Nr > " + $count
+    Write-Output   ""
+    Write-Output " Folder Nr > '$count'"  
     remove-item $_.fullname -Force -Recurse  -verbose }
 
 ForEach ($number in 1..10 ) {
     if ($number % 7 -eq 0) {
-        Write-Output 'Delete process is succefully done !!'
+        Write-Output 'How to use ForEach with Number in Powershell Script'
     }
     Write-Output '---------------------------------'
 }
+
+$csprojList = Get-ChildItem .\ -Filter "*.csproj" -Recurse
+$count = 0
+$csprojList | ForEach-Object ($_) { 
+    $count++;
+    Write-Output $_.fullname
+}
+Write-Host -ForegroundColor Green "Number of Project in Solution is: $count"
+
