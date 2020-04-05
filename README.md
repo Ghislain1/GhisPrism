@@ -2,6 +2,7 @@
 Rewriting [ChocolateyGUI](https://github.com/chocolatey/ChocolateyGUI/blob/develop/Source/ChocolateyGui) app by using [PRISM](https://prismlibrary.com/docs/getting-started/Download-and-Setup-Prism.html)  and [Material -Design In XAML](http://materialdesigninxaml.net/home)
 # Intro
 This is collection of WPF Samples using Prism.
+![image](https://github.com/Ghislain1/GhisPrism/blob/master/screenshots/shot1.JPG)
 
 # Related concepts
 * Asny/await usage
