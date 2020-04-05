@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using GhisPrism.Core;
-using GhisPrism.Core.Models;
-using GhisPrism.Core.Services;
 using static System.Environment;
 
 namespace GhisPrism.Package.Services

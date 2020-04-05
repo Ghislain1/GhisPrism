@@ -1,13 +1,8 @@
 ﻿namespace GhisPrism.Package.ViewModels
 {
-    using Core;
-    using Core.Models;
-    using Prism.Commands;
-    using Prism.Mvvm;
-    using System;
     using System.Collections.ObjectModel;
-    using System.Windows.Input;
     using System.Linq;
+    using System.Windows.Input;
 
     public class FileItemViewModel : BindableBase, IFileItemViewModel
     {

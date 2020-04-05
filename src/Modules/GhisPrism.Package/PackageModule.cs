@@ -1,13 +1,7 @@
 ﻿namespace GhisPrism.Package
 {
-    using Core;
-    using Core.Commons;
     using GhisPrism.Package.Services;
     using GhisPrism.Package.ViewModels;
-    using Prism.Ioc;
-    using Prism.Modularity;
-    using Prism.Regions;
-    using Unity;
     using Views;
 
     public class PackageModule : IModule

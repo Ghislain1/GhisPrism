@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GhisPrism.Package
+﻿namespace GhisPrism.Package
 {
-  public interface IFileItemListViewModel
-  {
-  }
+    public interface IFileItemListViewModel
+    {
+    }
 }

@@ -3,9 +3,10 @@ Write-Output $binAndObjFolder
 
 $count = 0
 $binAndObjFolder | ForEach-Object ($_) { 
-    count++;
+    $count++;
     Start-Sleep -Second 3
-    Write-Output $count
+    Write-Output " " $count
+    Write-Output " Folder Nr > " + $count
     remove-item $_.fullname -Force -Recurse  -verbose }
 
 ForEach ($number in 1..10 ) {
