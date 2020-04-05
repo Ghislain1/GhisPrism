@@ -24,7 +24,7 @@
         /// <returns></returns>
         Task<IEnumerable<Package>> GetInstalledPackages();
 
-        Task<IReadOnlyList<Tuple<string, SemanticVersion>>> GetOutdatedPackages(bool includePrerelease = false, string packageName = null);
+        Task<IReadOnlyList<Tuple<string, string>>> GetOutdatedPackages(bool includePrerelease = false, string packageName = null);
 
         Task<ChocolateySetting[]> GetSettings();
 

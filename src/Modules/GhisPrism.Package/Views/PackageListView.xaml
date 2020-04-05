@@ -10,20 +10,72 @@
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <DataTemplate x:Key="PackageTemplate">
+            <materialDesign:Card Width="200">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Source="{Binding IconUrl}" Height="80" Width="80" Stretch="UniformToFill" />
+                    <Button
+                        Grid.Row="0"
+                        Margin="0,0,16,-20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                        <materialDesign:PackIcon Kind="Tools" />
+                    </Button>
+                    <StackPanel Grid.Row="1" Margin="8,24,8,0">
+                        <TextBlock FontWeight="Bold" Text="{Binding Id}" />
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            Text="{Binding Version}"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Row="2"
+                        Margin="8"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                        <Button
+                            Width="30"
+                            Padding="2,0,2,0"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            Style="{StaticResource MaterialDesignToolButton}">
+                            <materialDesign:PackIcon Kind="ShareVariant" />
+                        </Button>
+                        <Button
+                            Width="30"
+                            Padding="2,0,2,0"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            Style="{StaticResource MaterialDesignToolButton}">
+                            <materialDesign:PackIcon Kind="Heart" />
+                        </Button>
+                        <materialDesign:PopupBox Padding="2,0,2,0" Style="{StaticResource MaterialDesignToolPopupBox}">
+                            <StackPanel>
+                                <Button Content="Uninstall" />
+                                <Button Content="Details(Commin soon!!)" />
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+        </DataTemplate>
+    </UserControl.Resources>
 
-    <Grid x:Name="MainGrid">
+    <Grid
+        x:Name="MainGrid"
+        Margin="5"
+        ShowGridLines="True">
         <Grid.RowDefinitions>
-
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition />
-            <!--  Status bar  -->
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" MinWidth="100" />
-            <!--  GridSplitter  -->
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <ListView
@@ -31,63 +83,17 @@
             MinWidth="300"
             DataContext="{Binding SourcesViewModel}"
             ItemsSource="{Binding SourceCollection}" />
-
-        <ListView
-            Grid.Column="1"
-            MinWidth="300"
-            ItemsSource="{Binding PackageCollection}">
-            <!--<ListView.ItemTemplate>
-                <DataTemplate>
-                    <materialDesign:Card Width="200">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="140" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Image Source="Resources/Chartridge046_small.jpg" Height="140" Width="196" Stretch="UniformToFill" />
-                            <Button
-                                Grid.Row="0"
-                                Margin="0,0,16,-20"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Bottom"
-                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                                <materialDesign:PackIcon Kind="Bike" />
-                            </Button>
-                            <StackPanel Grid.Row="1" Margin="8,24,8,0">
-                                <TextBlock FontWeight="Bold"  Text="{Binding Id}" />
-                                <TextBlock VerticalAlignment="Center" Text="{Binding Description}" TextWrapping="Wrap" />
-                            </StackPanel>
-                            <StackPanel
-                                Grid.Row="2"
-                                Margin="8"
-                                HorizontalAlignment="Right"
-                                Orientation="Horizontal">
-                                <Button
-                                    Width="30"
-                                    Padding="2,0,2,0"
-                                    materialDesign:RippleAssist.IsCentered="True"
-                                    Style="{StaticResource MaterialDesignToolButton}">
-                                    <materialDesign:PackIcon Kind="ShareVariant" />
-                                </Button>
-                                <Button
-                                    Width="30"
-                                    Padding="2,0,2,0"
-                                    materialDesign:RippleAssist.IsCentered="True"
-                                    Style="{StaticResource MaterialDesignToolButton}">
-                                    <materialDesign:PackIcon Kind="Heart" />
-                                </Button>
-                                <materialDesign:PopupBox Padding="2,0,2,0" Style="{StaticResource MaterialDesignToolPopupBox}">
-                                    <StackPanel>
-                                        <Button Content="Uninstall" />
-                                        <Button Content="Options" />
-                                    </StackPanel>
-                                </materialDesign:PopupBox>
-                            </StackPanel>
-                        </Grid>
-                    </materialDesign:Card>
-                </DataTemplate>
-            </ListView.ItemTemplate>-->
-        </ListView>
+        <!--  TODO: Took 2 hous to show scroller nicely!! use MaxHeight  -->
+        <DockPanel Grid.Column="1" MaxHeight="700">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemTemplate="{StaticResource PackageTemplate}" ItemsSource="{Binding PackageCollection}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="5" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
+        </DockPanel>
     </Grid>
 </UserControl>

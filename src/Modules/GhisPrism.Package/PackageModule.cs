@@ -20,7 +20,7 @@
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<ISourcesViewModel, SourcesViewModel>();
-            containerRegistry.RegisterSingleton<IGhisSpecialFolderService, GhisSpecialFolderService>();
+            containerRegistry.RegisterSingleton<IChocolateyService, ChocolateyService>();
         }
     }
 }

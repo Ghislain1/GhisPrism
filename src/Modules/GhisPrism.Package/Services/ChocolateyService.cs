@@ -2,12 +2,24 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
+    using chocolatey;
+    using chocolatey.infrastructure.app.domain;
+    using chocolatey.infrastructure.app.services;
+    using chocolatey.infrastructure.results;
     using GhisPrism.Core;
     using GhisPrism.Core.Models;
 
     public class ChocolateyService : IChocolateyService
     {
+        private readonly GetChocolatey chocolatey;
+
+        public ChocolateyService()
+        {
+            this.chocolatey = Lets.GetChocolatey();
+        }
+
         public Task AddSource(ChocolateySource source)
         {
             throw new NotImplementedException();
@@ -23,12 +35,30 @@
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Package>> GetInstalledPackages()
+        public async Task<IEnumerable<Package>> GetInstalledPackages()
         {
-            throw new NotImplementedException();
+            IEnumerable<Package> result = null;
+            this.chocolatey.Set(
+                 configuraion =>
+                 {
+                     configuraion.CommandName = CommandNameType.list.ToString();
+                     configuraion.ListCommand.LocalOnly = true;
+                 });
+
+            var chocoConfig = this.chocolatey.GetConfiguration();
+
+            if (chocoConfig.Sources != null)
+            {
+                var packages = await Task.Run(() => this.chocolatey.List<PackageResult>());
+                return packages.Select(package => this.CreatePackage(package)).ToArray();
+            }
+            else
+            {
+                return result;
+            }
         }
 
-        public Task<IReadOnlyList<Tuple<string, SemanticVersion>>> GetOutdatedPackages(bool includePrerelease = false, string packageName = null)
+        public Task<IReadOnlyList<Tuple<string, string>>> GetOutdatedPackages(bool includePrerelease = false, string packageName = null)
         {
             throw new NotImplementedException();
         }
@@ -96,6 +126,45 @@
         public Task UpdateSource(string id, ChocolateySource source)
         {
             throw new NotImplementedException();
+        }
+
+        private Package CreatePackage(PackageResult packageResult)
+        {
+            if (packageResult == null)
+            {
+                return null;
+            }
+            var packageInfoService = this.chocolatey.Container().GetInstance<IChocolateyPackageInformationService>();
+            var result = new Package()
+            {
+                Summary = packageResult.Package.Summary,
+                Title = packageResult.Package.Title,
+                // ReportAbuseUrl = packageResult.Package.ReportAbuseUrl.AbsoluteUri
+                Tags = packageResult.Package.Tags,
+                Language = packageResult.Package.Language,
+                PackageSize = packageResult.Package.PackageSize,
+                Authors = packageResult.Package.Authors.ToArray(),
+                Copyright = packageResult.Package.Copyright,
+                Dependencies = packageResult.ToString(),
+                // IconUrl = packageResult.Package.IconUrl.AbsoluteUri,
+                IsLatestVersion = packageResult.Package.IsLatestVersion,
+                Description = packageResult.Package.Description,
+                ReleaseNotes = packageResult.Package.ReleaseNotes,
+                // Source = new Uri(packageResult.SourceUri),
+                Id = packageResult.Package.Id,
+                Version = packageResult.Version,
+                VersionDownloadCount = packageResult.Package.VersionDownloadCount
+            };
+            var defauluIcon = "https://cdn.rawgit.com/digitaldrummerj/ChocolateyPackages/master/AndroidStudio/androidstudio_logo.png";
+            if (packageResult.Package.IconUrl == null)
+            {
+                result.IconUrl = defauluIcon;
+            }
+            else
+            {
+                result.IconUrl = packageResult.Package.IconUrl.AbsoluteUri;
+            }
+            return result;
         }
     }
 }

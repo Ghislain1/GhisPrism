@@ -61,7 +61,7 @@ namespace GhisPrism.Core.Models
 
         public string Title { get; set; }
 
-        public SemanticVersion Version { get; set; }
+        public string Version { get; set; }
 
         public int VersionDownloadCount { get; set; }
     }

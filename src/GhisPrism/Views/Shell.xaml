@@ -10,6 +10,8 @@
     Title="Shell"
     Width="1300"
     Height="700"
+    MinWidth="500"
+    MinHeight="500"
     mc:Ignorable="d">
     <materialDesign:DialogHost Identifier="Root" IsOpen="False">
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
@@ -65,78 +67,20 @@
                     </DockPanel>
                 </materialDesign:ColorZone>
 
-                <Grid x:Name="MainGrid">
-                    <Grid.RowDefinitions>
-
-                        <!--  Ribbon placement  -->
-                        <RowDefinition Height="Auto" />
-
-                        <!--  GridSplitter  -->
-                        <RowDefinition Height="Auto" />
-
-                        <RowDefinition />
-                        <!--  Status bar  -->
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-
-                        <ColumnDefinition Width="auto" MinWidth="100" />
-
-                        <!--  GridSplitter  -->
-                        <ColumnDefinition Width="Auto" />
-
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-
-                    <!--  placeholder for ribbon  -->
-                    <ContentControl
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="3"
-                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.RibbonRegion}" />
-
-                    <!--  horizontal GridSplitter  -->
-                    <GridSplitter
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="3"
-                        Height="5"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"
-                        Background="Black"
-                        ShowsPreview="True" />
-
-                    <!--  placeholder for treeview  -->
-                    <ContentControl
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.PackageListViewRegion}" />
-
-                    <!--  vertical  GridSplitter  -->
-                    <GridSplitter
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Width="0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Stretch"
-                        Background="Black"
-                        ShowsPreview="True" />
-
-                    <!--  placeholder for content view  -->
-                    <ContentControl
-                        Grid.Row="2"
-                        Grid.Column="2"
-                        Grid.ColumnSpan="2"
-                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemContentsViewRegion}" />
-
-                    <!--  placeholder for status bar view  -->
-                    <ContentControl
-                        Grid.Row="3"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
-                </Grid>
+                <!--  placeholder for status bar view  -->
+                <materialDesign:ColorZone
+                    Padding="8"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    Background="Orange"
+                    DockPanel.Dock="Bottom"
+                    Mode="PrimaryDark"
+                    Opacity="1">
+                    <ContentControl Height="8"  prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
+                </materialDesign:ColorZone>
+                <!--  placeholder for treeview  -->
+                <StackPanel>
+                    <ContentControl prism:RegionManager.RegionName="{x:Static ghis:RegionNames.PackageListViewRegion}" />
+                </StackPanel>
             </DockPanel>
         </materialDesign:DrawerHost>
     </materialDesign:DialogHost>
