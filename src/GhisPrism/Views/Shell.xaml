@@ -11,50 +11,57 @@
     Width="1300"
     Height="700"
     mc:Ignorable="d">
-    <materialDesign:DialogHost  Identifier="Root" IsOpen="False">
+    <materialDesign:DialogHost Identifier="Root" IsOpen="False">
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
-            <!--Left content-->
+            <!--  Left content  -->
             <materialDesign:DrawerHost.LeftDrawerContent>
                 <DockPanel MinWidth="220">
                     <TextBox
                         x:Name="DemoItemsSearchBox"
-                        Text="Comming Soon!!!"
-                        DockPanel.Dock="Top"
-                        Margin="16, 4"
                         Width="200"
-                        BorderThickness="0"
+                        Margin="16,4"
                         materialDesign:HintAssist.Hint="Search"
                         materialDesign:HintAssist.IsFloating="True"
+                        materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
                         materialDesign:TextFieldAssist.HasClearButton="True"
                         materialDesign:TextFieldAssist.HasOutlinedTextField="True"
-                        materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
-                        materialDesign:TextFieldAssist.TextFieldCornerRadius="4" />
-                    <Rectangle  Fill="Yellow" />
+                        materialDesign:TextFieldAssist.TextFieldCornerRadius="4"
+                        BorderThickness="0"
+                        DockPanel.Dock="Top"
+                        Text="Comming Soon!!!" />
+                    <Rectangle Fill="Green" Opacity="0.4" />
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
 
-            <!--Main content-->
+            <!--  Main content  -->
             <DockPanel>
-                <materialDesign:ColorZone Padding="16"
-                                          Background="Green"
-                                          materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                                           Mode="PrimaryDark" DockPanel.Dock="Top">
+                <materialDesign:ColorZone
+                    Padding="16"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                    Background="Green"
+                    DockPanel.Dock="Top"
+                    Mode="PrimaryDark"
+                    Opacity="0.8">
                     <DockPanel>
                         <ToggleButton
                             x:Name="MenuToggleButton"
-                            Style="{StaticResource MaterialDesignHamburgerToggleButton}"
+                            Click="MenuToggleButton_OnClick"
                             IsChecked="False"
-                            Click="MenuToggleButton_OnClick" />
-                        <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                            Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                        <materialDesign:PopupBox
+                            DockPanel.Dock="Right"
+                            PlacementMode="BottomAndAlignRightEdges"
+                            StaysOpen="False">
                             <StackPanel>
                                 <Button Content="Commin soon!... " IsEnabled="False" />
                                 <Separator />
                             </StackPanel>
                         </materialDesign:PopupBox>
-                        <TextBlock HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Text="GhisOne-WpfApp"
-                                   FontSize="22" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="22"
+                            Text="GhisOne-App" />
                     </DockPanel>
                 </materialDesign:ColorZone>
 
@@ -83,52 +90,52 @@
 
                     <!--  placeholder for ribbon  -->
                     <ContentControl
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.RibbonRegion}" />
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.RibbonRegion}" />
 
                     <!--  horizontal GridSplitter  -->
                     <GridSplitter
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="3"
-            Height="5"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            Background="Black"
-            ShowsPreview="True" />
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Height="5"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background="Black"
+                        ShowsPreview="True" />
 
                     <!--  placeholder for treeview  -->
                     <ContentControl
-            Grid.Row="2"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.PackageListViewRegion}" />
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.PackageListViewRegion}" />
 
                     <!--  vertical  GridSplitter  -->
                     <GridSplitter
-            Grid.Row="2"
-            Grid.Column="1"
-            Width="0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Stretch"
-            Background="Black"
-            ShowsPreview="True" />
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Width="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Stretch"
+                        Background="Black"
+                        ShowsPreview="True" />
 
                     <!--  placeholder for content view  -->
                     <ContentControl
-            Grid.Row="2"
-            Grid.Column="2"
-            Grid.ColumnSpan="2"
-            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemContentsViewRegion}" />
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.FileItemContentsViewRegion}" />
 
                     <!--  placeholder for status bar view  -->
                     <ContentControl
-            Grid.Row="3"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        prism:RegionManager.RegionName="{x:Static ghis:RegionNames.StatusBarRegion}" />
                 </Grid>
             </DockPanel>
         </materialDesign:DrawerHost>

@@ -1,15 +1,27 @@
 ﻿namespace GhisPrism.Package.Services
 {
-    using GhisPrism.Core;
-    using GhisPrism.Core.Models;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+    using GhisPrism.Core;
+    using GhisPrism.Core.Models;
+
+    // using IFileSystem = chocolatey.infrastructure.filesystem.IFileSystem;
 
     public class ChocolateyService : IChocolateyService
     {
+        private IChocolateyConfigSettingsService chocolateyConfigSettingsService;
+        private IProgressService progressService;
+
+        // IMapper mapper,
+        public ChocolateyService(IProgressService progressService, IChocolateyConfigSettingsService chocolateyConfigSettingsService)
+        {
+            // TODO: Ghislae  this hsoukd be inject ion constructor. IXmlService xmlService,
+            // IFileSystem fileSystem, IConfigService configService
+            this.progressService = progressService ?? throw new ArgumentNullException(nameof(progressService));
+            this.chocolateyConfigSettingsService = chocolateyConfigSettingsService ?? throw new ArgumentNullException(nameof(chocolateyConfigSettingsService));
+        }
+
         public Task AddSource(ChocolateySource source)
         {
             throw new NotImplementedException();

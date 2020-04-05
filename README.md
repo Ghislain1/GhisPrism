@@ -3,8 +3,16 @@ Rewriting [ChocolateyGUI](https://github.com/chocolatey/ChocolateyGUI/blob/devel
 # Intro
 This is collection of WPF Samples using Prism.
 
-# Related concepts
-* Asny/await usage
+# Related Concepts
+* DI
+* [MVVM](https://intellitect.com/getting-started-model-view-viewmodel-mvvm-pattern-using-windows-presentation-framework-wpf/)
+* Mapper
+* Extensions 
+
+# HowTos - Experience
+* How to use MVVM with a **list of Models** in action
+* How to use MVVM with **one Model** in action
+* How to use Async/await 
 * How to create MSI from  release dll
 * How to build a project
 * How to comment a project
@@ -12,17 +20,12 @@ This is collection of WPF Samples using Prism.
 * Project structure for MVVM in WPF:
    * [Example 1]()
 
-# Technologies
-* DI
-* [MVVM](https://intellitect.com/getting-started-model-view-viewmodel-mvvm-pattern-using-windows-presentation-framework-wpf/)
-* Mapper
-
 
 # Frameworks and Libraries
 * PRISM
 * [Material -Design In XAML](http://materialdesigninxaml.net/home)
    * [Material in Action](https://github.com/ButchersBoy/doobry)
    
-# Inspiraton 
-* from [ChocolateyGUI](https://github.com/chocolatey/ChocolateyGUI/blob/develop/Source/ChocolateyGui), but with Prism and MaterialXAML
+# Talks
+* [ChoclateyService]() - Methods - General
 
